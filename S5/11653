@@ -1,0 +1,14 @@
+N = int(input())
+
+def prime_factorization(N):
+    if N == 1:
+        return
+
+    for i in range(2, N+1):
+        while (N%i == 0):
+            print(i)
+            N = N/i
+        if N == 1:
+            break
+
+prime_factorization(N)
