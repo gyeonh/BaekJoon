@@ -1,0 +1,33 @@
+N = list(input())   # String에 list()를 씌우면 한문자씩 리스트안에 저장됨.
+
+cntDict = {}
+for i in range(9):
+    cntDict[i] = 0
+
+for j in N:
+    j = int(j)
+    if j==9:
+        cntDict[6] = cntDict[6] + 1
+    else:
+        cntDict[j] = cntDict[j] + 1
+
+result = 0
+check6 = 0
+checkother = 0
+
+for k in range(9):
+    check6 = cntDict[6]
+    if k == 6:
+        pass
+    else:
+        if cntDict[k] >= checkother:
+            checkother = cntDict[k]
+        else:
+            continue
+
+if check6 % 2 == 0:
+    result = max(check6//2, checkother)
+else:
+    result = max(check6//2+1, checkother)
+
+print(result)
