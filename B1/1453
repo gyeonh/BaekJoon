@@ -1,0 +1,13 @@
+N = int(input())
+num = list(map(int, input().split()))
+count=0
+
+com=[]
+for i in range(N):
+    if i == 0:
+        com.append(num[i])
+    elif num[i] in com:
+        count+=1
+    else:
+        com.append(num[i])
+print(count)
