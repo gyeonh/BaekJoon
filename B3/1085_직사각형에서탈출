@@ -1,8 +1,11 @@
 import math
+
 x,y,w,h=map(int,input().split())
 result=[]
+
 result.append((x-0)**2)
 result.append((w-x)**2)
 result.append((y-0)**2)
 result.append((h-y)**2)
+
 print(int(math.sqrt(min(result))))
